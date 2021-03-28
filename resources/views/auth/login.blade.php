@@ -1,72 +1,28 @@
 <x-layouts.app>
-    <section>
-        <div class="block no-padding  gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="inner2">
-                            <div class="inner-title2">
-                                <h3>Login</h3>
-                                <span>Keep up to date with the latest news</span>
-                            </div>
-                            <div class="page-breacrumbs">
-                                <ul class="breadcrumbs">
-                                    <li><a href="#" title="">Home</a></li>
-                                    <li><a href="#" title="">Pages</a></li>
-                                    <li><a href="#" title="">Login</a></li>
-                                </ul>
-                            </div>
-                        </div>
+    <div class="flex flex-col">
+        <x-layouts.page-breadcrumb-section></x-layouts.page-breadcrumb-section>
+        <section class="w-full max-w-sm mx-auto flex-grow">
+            <form method="post" action="{{ route('login') }}" class="flex flex-col space-y-8">
+                @csrf
+
+                <div class="relative">
+                    <input type="text" name="email" placeholder="Email"
+                           class="p-4 h-full w-full outline-none border border-gray-200 rounded-lg focus:ring">
+                    <div class="absolute right-0 top-0 h-full flex items-center mr-2">
+                        <i class="las la-user text-2xl text-gray-500"></i>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="block remove-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="account-popup-area signin-popup-box static">
-                            <div class="account-popup">
-                                <span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
-                                <form method="post" action="{{ route('login') }}">
-                                    @csrf
-                                    <div class="cfield mb-2">
-                                        <input type="text" name="email" placeholder="Email">
-                                        <i class="la la-user"></i>
-                                    </div>
-                                    @error('email')
-                                    <div class="text-danger small mb-2">{{ $message }}</div>
-                                    @enderror
-
-                                    <div class="cfield mb-2 mt-4">
-                                        <input type="password" name="password" placeholder="Password">
-                                        <i class="la la-key"></i>
-                                    </div>
-                                    @error('password')
-                                    <div class="text-danger small mb-2">{{ $message }}</div>
-                                    @enderror
-
-                                    <p class="remember-label">
-                                        <input type="checkbox" name="remember" id="remember"><label for="remember">Remember</label>
-                                    </p>
-                                    <a href="#" title="">Forgot Password?</a>
-                                    <button type="submit">Login</button>
-                                </form>
-                                <div class="extra-login">
-                                    <span>Or</span>
-                                    <div class="login-social">
-                                        <a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
-                                        <a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="relative">
+                    <input type="password" name="password" placeholder="Password"
+                           class="p-4 h-full w-full outline-none border border-gray-200 rounded-lg focus:ring">
+                    <div class="absolute right-0 top-0 h-full flex items-center mr-2">
+                        <i class="las la-key text-2xl text-gray-500"></i>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+
+                <button class="bg-jh-green-400 text-white py-4 rounded-lg font-semibold">Login</button>
+            </form>
+        </section>
+    </div>
 </x-layouts.app>
