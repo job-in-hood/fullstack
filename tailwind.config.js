@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
     purge: [
@@ -13,6 +14,7 @@ module.exports = {
                 sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                'gray' : colors.trueGray,
                 'jh-green': {
                     400: '#26ae61'
                 }
@@ -20,6 +22,10 @@ module.exports = {
             backgroundImage: theme => ({
                 'search-section': "url('/images/bg-search.jpg')",
             })
+        },
+
+        container: {
+            center: true,
         },
     },
     variants: {

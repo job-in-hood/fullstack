@@ -14,10 +14,12 @@
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 <x-page-header/>
 
-{{ $slot }}
+<div class="flex-grow">
+    {{ $slot }}
+</div>
 
 <x-page-footer/>
 </body>
