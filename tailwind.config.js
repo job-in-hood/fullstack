@@ -10,13 +10,16 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Lato', ...defaultTheme.fontFamily.sans],
+                sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'jh-green': {
                     400: '#26ae61'
                 }
-            }
+            },
+            backgroundImage: theme => ({
+                'search-section': "url('/images/bg-search.jpg')",
+            })
         },
     },
     variants: {
