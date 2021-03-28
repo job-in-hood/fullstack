@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     purge: [
         './resources/**/*.blade.php',
@@ -6,7 +8,16 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['Lato', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                'jh-green': {
+                    400: '#26ae61'
+                }
+            }
+        },
     },
     variants: {
         extend: {},
