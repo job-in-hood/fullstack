@@ -8,19 +8,19 @@
     </nav>
     <nav class="hidden md:block">
         <ul class="flex text-white space-x-8">
-            <li><a href="#" class="flex items-center">
+            <li><a href="{{ route('register') }}" class="flex items-center">
                     <i class="las la-2x la la-user-circle mr-2"></i>
                     <span>Sign Up</span>
                 </a>
             </li>
-            <li><a href="#" class="flex items-center">
+            <li><a href="{{ route('login') }}" class="flex items-center">
                     <i class="las la-2x la la-key mr-2"></i>
                     <span>Login</span>
                 </a>
             </li>
         </ul>
     </nav>
-    <div class="absolute inset-0 flex items-center justify-center">
+    <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
         <a href="{{ route('home') }}">
             <img class="h-8 w-auto" src="{{ asset('images/logo-white.png') }}">
         </a>

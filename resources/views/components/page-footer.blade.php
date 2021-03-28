@@ -30,23 +30,23 @@
                     <a href="#">Jobs in Edinburgh</a>
                     <a href="#">Jobs in Glasgow</a>
                 </div>
-                <div class="grid grid-cols-2 space-x-4 whitespace-nowrap">
-                    <a href="#"
+                <div class="grid grid-cols-2 gap-4 whitespace-nowrap">
+                    <div
                        class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
                         <i class="fab fa-app-store text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>
                         <div>
                             <p class="text-lg">Apple Store</p>
                             <p>Not available</p>
                         </div>
-                    </a>
-                    <a href="#"
+                    </div>
+                    <div
                        class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
-                        <i class="fab fa-app-store text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>
+                        <i class="fab fa-google-play text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>
                         <div>
-                            <p class="text-lg">Apple Store</p>
+                            <p class="text-lg">Play Store</p>
                             <p>Not available</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
