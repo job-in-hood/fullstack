@@ -8,16 +8,29 @@
     </nav>
     <nav class="hidden md:block">
         <ul class="flex text-white space-x-8">
-            <li><a href="{{ route('register') }}" class="flex items-center">
-                    <i class="las la-2x la la-user-circle mr-2"></i>
-                    <span>Sign Up</span>
-                </a>
-            </li>
-            <li><a href="{{ route('login') }}" class="flex items-center">
-                    <i class="las la-2x la la-key mr-2"></i>
-                    <span>Login</span>
-                </a>
-            </li>
+            @auth
+                <li>
+                    <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="flex items-center">
+                            <i class="las la-2x la la-user-circle mr-2"></i>
+                            <span>{{ auth()->user()->name }}</span>
+                        </button>
+                    </form>
+                </li>
+            @endauth
+            @guest
+                <li><a href="{{ route('register') }}" class="flex items-center">
+                        <i class="las la-2x la la-user-circle mr-2"></i>
+                        <span>Sign Up</span>
+                    </a>
+                </li>
+                <li><a href="{{ route('login') }}" class="flex items-center">
+                        <i class="las la-2x la la-key mr-2"></i>
+                        <span>Login</span>
+                    </a>
+                </li>
+            @endguest
         </ul>
     </nav>
     <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
