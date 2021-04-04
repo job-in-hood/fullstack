@@ -12,7 +12,7 @@
                 <li>
                     <form method="post" action="{{ route('logout') }}">
                         @csrf
-                        <button class="flex items-center">
+                        <button class="flex items-center focus:outline-none">
                             <i class="las la-2x la la-user-circle mr-2"></i>
                             <span>{{ auth()->user()->name }}</span>
                         </button>

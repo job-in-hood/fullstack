@@ -1,28 +1,23 @@
-<x-layouts.app>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+<x-layouts.app class="flex flex-col">
+    <x-layouts.page-breadcrumb-section title="Email Verification">
+        {{ __('Before proceeding, you must verify your email') }}
+    </x-layouts.page-breadcrumb-section>
 
-                    <div class="card-body">
-                        @if (session('resent'))
-                            <div class="alert alert-success" role="alert">
-                                {{ __('A fresh verification link has been sent to your email address.') }}
-                            </div>
-                        @endif
-
-                        {{ __('Before proceeding, please check your email for a verification link.') }}
-                        {{ __('If you did not receive the email') }},
-                        <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
-                            @csrf
-                            <button type="submit"
-                                    class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>
-                            .
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <div class="container flex-col justify-center">
+        <div class="text-center py-12 leading-loose">
+            {{ __('Please check your email for a verification link.') }} <br/>
+            {{ __('If you did not receive the email, you can request a new one') }},
         </div>
+
+        <form method="POST" action="{{ route('verification.send') }}" class="text-center">
+            @csrf
+            <x-form.standard-button>{{ __('Please send the verification email again') }}</x-form.standard-button>
+
+            @if (session('status') == 'verification-link-sent')
+                <div class="mt-4 font-medium text-sm text-green-600">
+                    {{ __('A new email verification link has been emailed to you.') }}
+                </div>
+            @endif
+        </form>
     </div>
-</x-layouts.app>>
+</x-layouts.app>

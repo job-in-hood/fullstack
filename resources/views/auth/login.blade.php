@@ -29,7 +29,7 @@
                     <a href="" class="text-sm">Forgot Password?</a>
                 </div>
 
-                <button class="bg-jh-green-400 text-white py-4 rounded-lg font-semibold">Login</button>
+                <x-form.standard-button>Login</x-form.standard-button>
             </form>
         </section>
     </div>
