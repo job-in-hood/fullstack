@@ -7,6 +7,13 @@
         <section class="w-full max-w-sm mx-auto flex-grow">
             <form method="post" action="{{ route('login') }}" class="flex flex-col space-y-6 mb-12">
                 @csrf
+
+                @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
                 <x-form.text-input name="email" placeholder="Email" class="p-4 h-full w-full"
                                    value="{{ old('email') }}">
                     <x-slot name="icon"><i class="las la-user text-2xl text-gray-500"></i></x-slot>
@@ -26,7 +33,7 @@
                 <div class="flex justify-between">
                     <x-form.checkbox name="remember" id="remember">Remember</x-form.checkbox>
 
-                    <a href="" class="text-sm">Forgot Password?</a>
+                    <a href="{{ route('password.request') }}" class="text-sm">Forgot Password?</a>
                 </div>
 
                 <x-form.standard-button>Login</x-form.standard-button>

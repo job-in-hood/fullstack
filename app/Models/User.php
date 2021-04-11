@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -78,16 +77,5 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
     public function cvs(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Cv::class);
-    }
-
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
     }
 }
