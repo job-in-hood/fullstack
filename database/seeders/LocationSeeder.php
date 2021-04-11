@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Location;
 use App\Models\LocationType;
+use File;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class LocationSeeder extends Seeder
@@ -17,7 +17,7 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
-        $citiesFile = Storage::get('seeds/cities.csv');
+        $citiesFile = File::get(base_path('database/seeders/cities.csv'));
 
         $data_array = array_map("str_getcsv", explode("\n", $citiesFile));
         $labels = array_shift($data_array);

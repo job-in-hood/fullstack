@@ -47,6 +47,10 @@
                     </div>
                 @endauth
                 @guest
+                    <x-navbar.navbar-link to="{{ route('post-a-job') }}" class="hidden xl:flex">
+                        <i class="las la-2x la la-plus-circle mr-2"></i>
+                        <span>Post a job</span>
+                    </x-navbar.navbar-link>
                     <x-navbar.navbar-link :to="route('register')">
                         <i class="las la-2x la la-user-circle mr-2"></i>
                         <span>Sign Up</span>
@@ -97,9 +101,11 @@
             @endauth
 
             <a href="/" class="flex items-center space-x-4 px-4 py-2"><i
-                    class="text-xl las la-suitcase text-jh-green-400"></i><span>Jobs</span></a>
+                    class="text-xl las la-suitcase text-jh-green-400"></i><span>Find a job</span></a>
             <a href="/" class="flex items-center space-x-4 px-4 py-2"><i
                     class="text-xl las la-blog text-jh-green-400"></i><span>Blog</span></a>
+            <a href="{{ route('post-a-job') }}" class="flex items-center space-x-4 px-4 py-2"><i
+                    class="text-xl las la-plus-circle text-jh-green-400"></i><span>Post a job</span></a>
         </div>
     </nav>
 </header>
