@@ -14,7 +14,7 @@
                     You don't have any company to create a job post.<br/>
                     You must be authorized for a company or create a new company to create a job
                 </div>
-                <a href="#" class="inline-block mt-12 px-8 py-3 bg-jh-green-400 text-white rounded-lg focus:outline-none">
+                <a href="{{ route('company.create') }}" class="inline-block mt-12 px-8 py-3 bg-jh-green-400 text-white rounded-lg focus:outline-none">
                     <div class="flex items-center space-x-2">
                         <i class="las la-2x la-plus-circle"></i><span class="text-xl">Create a Company</span>
                     </div>

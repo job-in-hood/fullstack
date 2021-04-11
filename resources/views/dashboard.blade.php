@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class="container">
-        User Dashboard
-    </div>
+    <x-layouts.page-breadcrumb-section title="Dashboard">
+        {{ auth()->user()->name }}
+    </x-layouts.page-breadcrumb-section>
 </x-layouts.app>

@@ -9,6 +9,10 @@
         </div>
         <div class="hidden md:block">
             <div class="flex text-white space-x-2 items-center">
+                <x-navbar.navbar-link to="{{ route('post-a-job') }}" class="hidden xl:flex">
+                    <i class="las la-2x la la-plus-circle mr-2"></i>
+                    <span>Post a job</span>
+                </x-navbar.navbar-link>
                 @auth
                     <div class="relative">
                         <x-navbar.navbar-button class="px-4 py-2"
@@ -47,10 +51,6 @@
                     </div>
                 @endauth
                 @guest
-                    <x-navbar.navbar-link to="{{ route('post-a-job') }}" class="hidden xl:flex">
-                        <i class="las la-2x la la-plus-circle mr-2"></i>
-                        <span>Post a job</span>
-                    </x-navbar.navbar-link>
                     <x-navbar.navbar-link :to="route('register')">
                         <i class="las la-2x la la-user-circle mr-2"></i>
                         <span>Sign Up</span>

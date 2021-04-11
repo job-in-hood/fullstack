@@ -27,6 +27,7 @@ Route::middleware(['auth','verified'])->group(function() {
 
     // Recruiters
     Route::prefix('recruiter')->group(function() {
+        Route::resource('company',CompanyController::class);
         Route::get('post-a-job', [JobController::class, 'landing'])->name('post-a-job');
     });
 });
