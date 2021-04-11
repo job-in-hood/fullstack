@@ -1,6 +1,5 @@
-<header class="bg-jh-green-400 sticky relative z-50"
-        x-data="{userMenuOpen: false, mobileMenuOpen: false}">
-    <nav class="h-20 px-6 md:px-8 flex items-center justify-end md:justify-between relative">
+<header class="bg-jh-green-400 sticky top-0 w-full z-50" x-data="{userMenuOpen: false, mobileMenuOpen: false}">
+    <nav class="w-full h-20 flex items-center px-6 md:px-8 flex items-center justify-end md:justify-between relative">
         <div class="hidden md:block">
             <ul class="flex text-white space-x-8">
                 <li><a href="{{ route('home') }}">Home</a></li>
@@ -71,8 +70,7 @@
             </a>
         </div>
     </nav>
-    <nav class="absolute w-full "
-         x-show="mobileMenuOpen">
+    <nav class="absolute w-full" x-show="mobileMenuOpen">
         <div class="fixed w-full h-full bg-black opacity-50"></div>
         <div class="flex flex-col bg-white text-gray-600 font-semibold divide-y divide-dotted relative"
              @click.away="mobileMenuOpen = false">
@@ -103,6 +101,5 @@
             <a href="/" class="flex items-center space-x-4 px-4 py-2"><i
                     class="text-xl las la-blog text-jh-green-400"></i><span>Blog</span></a>
         </div>
-
     </nav>
 </header>
