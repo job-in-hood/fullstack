@@ -19,5 +19,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth','verified'])->group(function() {
+    Route::get('home', fn() => redirect(route('home')));
+
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
