@@ -3,11 +3,13 @@
         Select the company to create a post
     </x-layouts.page-breadcrumb-section>
 
-    <div class="container flex">
+    <section class="container mt-12 flex flex-col">
         @forelse($representations as $representation)
-            <div class="flex-1">
-                {{ $representation->company->name }}
-            </div>
+            <a href="#" class="group">
+                <div class="p-8 text-gray-700 border border-jh-green-400 group-hover:bg-gray-50 rounded-lg flex">
+                    <h3 class="text-xl text- font-extrabold">{{ $representation->company->name }}</h3>
+                </div>
+            </a>
         @empty
             <div class="flex-grow px-4 py-12 text-center">
                 <div class="text-xl">
@@ -22,5 +24,5 @@
 
             </div>
         @endforelse
-    </div>
+    </section>
 </x-layouts.app>

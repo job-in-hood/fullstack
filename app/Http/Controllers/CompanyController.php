@@ -18,7 +18,14 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $representations = auth()->user()
+            ->representations()
+            ->with('company')
+            ->get();
+
+        return response()->view('recruiter.company.index', [
+            'representations' => $representations
+        ]);
     }
 
     /**

@@ -19,7 +19,7 @@ class Representation extends Pivot
      */
     protected $table = 'representations';
 
-    protected $guard_name = 'api';
+    protected $guard_name = 'web';
 
     /**
      * Indicates if the IDs are auto-incrementing.

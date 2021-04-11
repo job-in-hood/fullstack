@@ -13,7 +13,7 @@ class JobController extends Controller
      */
     public function landing()
     {
-        $representations = auth()->user()->representations();
+        $representations = auth()->user()->representations;
 
         return response()->view('recruiter.job.company-selector', [
             'representations' => $representations
