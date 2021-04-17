@@ -10,4 +10,8 @@ class OauthProvider extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'slug'];
+
+    public function oauthAccounts() {
+        return $this->hasMany(OauthAccount::class);
+    }
 }

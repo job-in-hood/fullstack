@@ -35,5 +35,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-Route::get('/login/{provider}', [OauthController::class, 'redirect']);
-Route::get('/login/{provider}/callback',[OauthController::class, 'callback']);
+Route::get('/login/{provider:slug}', [OauthController::class, 'redirect'])->name('social-login');
+Route::get('/login/{provider:slug}/callback',[OauthController::class, 'callback']);
