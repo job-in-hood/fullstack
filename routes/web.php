@@ -5,6 +5,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -24,6 +25,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', fn() => redirect(route('home')));
+    Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -34,6 +36,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
-
-Route::get('/login/{provider:slug}', [OauthController::class, 'redirect'])->name('social-login');
-Route::get('/login/{provider:slug}/callback',[OauthController::class, 'callback']);
+// Social Login
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login/{provider:slug}', [OauthController::class, 'redirect'])->name('social-login');
+    Route::get('/login/{provider:slug}/callback', [OauthController::class, 'callback']);
+});

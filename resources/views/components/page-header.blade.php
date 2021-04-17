@@ -41,12 +41,9 @@
                             <a class="px-4 py-2 hover:bg-gray-100" href="#">
                                 <i class="las la-user mr-2"></i> Edit Profile
                             </a>
-                            <form class="inline" method="post" action="{{ route('logout') }}">
-                                @csrf
-                                <button class="w-full px-4 py-2 text-left hover:bg-gray-100 focus:outline-none"><i
-                                        class="las la-sign-out-alt mr-2"></i> Sign Out
-                                </button>
-                            </form>
+                            <a class="px-4 py-2 hover:bg-gray-100" href="#">
+                                <i class="las la-sign-out-alt mr-2"></i> Sign Out
+                            </a>
                         </div>
                     </div>
                 @endauth
@@ -89,11 +86,8 @@
                     class="px-4 py-4 from-gray-200 to-white bg-gradient-to-t text-xl tracking-wide">
                     {{ auth()->user()->name }}
                 </div>
-                <form class="inline" method="post" action="{{ route('logout') }}">
-                    @csrf
-                    <button class="flex items-center space-x-4 px-4 py-2 text-gray-600 font-semibold "><i
-                            class="text-xl las la-sign-out-alt text-jh-green-400"></i><span>Sign Out</span></button>
-                </form>
+                <a href="{{ route('logout') }}" class="flex items-center space-x-4 px-4 py-2"><i
+                        class="text-xl las la-sign-out-alt text-jh-green-400"></i><span>Sign Out</span></a>
                 <a href="{{ route('dashboard') }}" class="flex items-center space-x-4 px-4 py-2"><i
                         class="text-xl las la-tachometer-alt text-jh-green-400"></i><span>Dashboard</span></a>
                 <a href="{{ route('dashboard') }}" class="flex items-center space-x-4 px-4 py-2"><i

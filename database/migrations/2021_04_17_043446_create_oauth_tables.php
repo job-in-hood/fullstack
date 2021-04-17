@@ -25,7 +25,7 @@ class CreateOauthTables extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('oauth_provider_id')->constrained()->restrictOnDelete();
             $table->string('account_id')->index();
-            $table->string('token')->nullable();
+            $table->text('token')->nullable();
             $table->json('additional_info')->nullable();
             $table->timestamps();
 

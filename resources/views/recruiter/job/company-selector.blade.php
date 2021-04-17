@@ -3,7 +3,7 @@
         Select the company to create a post
     </x-layouts.page-breadcrumb-section>
 
-    <section class="container mt-12 grid grid-cols-2 gap-6">
+    <section class="container my-12 grid grid-cols-2 gap-6">
         @forelse($representations as $representation)
             <a href="#" class="group">
                 <div class="p-8 text-gray-700 border-2 border-jh-green-400 group-hover:bg-green-100 rounded-lg flex">
@@ -12,7 +12,7 @@
                 </div>
             </a>
         @empty
-            <div class="flex-grow px-4 py-12 text-center">
+            <div class="flex-grow col-span-2 px-4 py-12 text-center">
                 <div class="text-xl">
                     You don't have any company to create a job post.<br/>
                     You must be authorized for a company or create a new company to create a job
