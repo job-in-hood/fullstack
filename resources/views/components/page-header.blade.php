@@ -41,7 +41,7 @@
                             <a class="px-4 py-2 hover:bg-gray-100" href="#">
                                 <i class="las la-user mr-2"></i> Edit Profile
                             </a>
-                            <a class="px-4 py-2 hover:bg-gray-100" href="#">
+                            <a class="px-4 py-2 hover:bg-gray-100" href="{{ route('logout') }}">
                                 <i class="las la-sign-out-alt mr-2"></i> Sign Out
                             </a>
                         </div>
