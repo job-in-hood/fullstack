@@ -27,7 +27,7 @@ class DefaultRolesAndPermissions extends Seeder
 
         // System Debug Permission
         $permission = Permission::firstOrCreate([
-            'name' => 'system-debug'
+            'name' => 'system.debug'
         ]);
         $permission->assignRole(['Super Administrator', 'System Administrator']);
 
@@ -37,8 +37,8 @@ class DefaultRolesAndPermissions extends Seeder
         ]);
 
         $companyPermissions = [
-            'company-update', 'company-delete',
-            'job-create', 'job-edit', 'job-delete', 'job-publish'
+            'company.update', 'company.delete',
+            'job.create', 'job.edit', 'job.delete', 'job.publish'
         ];
 
         foreach ($companyPermissions as $companyPermission) {
