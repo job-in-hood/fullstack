@@ -32,6 +32,10 @@ class Oauth
 
         if ($account) {
             // User already exist, return user
+            if (!$account->user->hasVerifiedEmail()) {
+                $account->user->markEmailAsVerified();
+            }
+
             return $account->user;
         } else {
             // Get or create local user
@@ -60,10 +64,10 @@ class Oauth
             'password' => Hash::make(Str::random()),
         ]);
 
-        if (!$user->id) {
+        if (!$user->id || !$user->hasVerifiedEmail) {
             // Register user first
-            $user->email_verified_at = now();
             $user->save();
+            $user->markEmailAsVerified();
         }
 
         return $user;

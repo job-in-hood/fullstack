@@ -29,7 +29,7 @@ class DefaultRolesAndPermissions extends Seeder
         $permission = Permission::firstOrCreate([
             'name' => 'system.debug'
         ]);
-        $permission->assignRole(['Super Administrator', 'System Administrator']);
+        $permission->assignRole(['System Administrator']);
 
         // Company Roles
         $role = Role::firstOrCreate([

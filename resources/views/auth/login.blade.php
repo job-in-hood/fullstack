@@ -5,6 +5,10 @@
         </x-layouts.page-breadcrumb-section>
 
         <section class="container py-12">
+            @if(session()->has('error'))
+                <div class="pb-4 text-center text-red-500">{{ session('error') }}</div>
+            @endif
+
             <div class="grid md:grid-cols-2 max-w-5xl mx-auto md:gap-8 md:divide-x">
                 <form method="post" action="{{ route('login') }}" class="flex flex-col space-y-6 px-6 md:p-0">
                     @if (session('status'))

@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', fn() => redirect(route('home')));
-    Route::get('logout', [AuthenticatedSessionController::class, 'destroy']);
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

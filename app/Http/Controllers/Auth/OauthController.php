@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\OauthProvider;
 use App\Services\Oauth\Oauth;
-use http\Env\Response;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -19,16 +18,23 @@ class OauthController extends Controller
 
     protected function callback(OauthProvider $provider)
     {
-        $oauthUser = Socialite::driver($provider->slug)->user();
+        try {
+            $oauthUser = Socialite::driver($provider->slug)->user();
 
-        if ($oauthUser) {
-            $user = (new Oauth($provider, $oauthUser))->findOrRegisterUser();
+            if ($oauthUser) {
+                $user = (new Oauth($provider, $oauthUser))->findOrRegisterUser();
 
-            if ($user) {
-                auth()->login($user);
-                return response()->redirectToRoute('home');
+                if ($user) {
+                    auth()->login($user);
+                    return response()->redirectToRoute('home');
+                }
             }
         }
+        catch (\Exception $ex) {
+            dd($ex);
+            session()->flash('error', 'Login attempt failed');
+        }
+
         return response()->redirectToRoute('login');
     }
 }
