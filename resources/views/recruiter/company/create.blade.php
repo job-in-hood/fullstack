@@ -5,7 +5,7 @@
         <form method="post" action="{{ route('company.store') }}" class="grid lg:grid-cols-2 gap-6 my-12">
             @csrf
 
-            <x-form.text-input name="name" placeholder="Company Name" class="p-4 h-full w-full"
+            <x-form.text-input name="name" placeholder="Company Name" class="p-4"
                                value="{{ old('name') }}">
                 <x-slot name="icon"><i class="las la-tag text-2xl text-gray-500"></i></x-slot>
                 @error('name')
@@ -13,8 +13,7 @@
                 @enderror
             </x-form.text-input>
 
-            <x-form.text-input name="email" placeholder="Contact Email" class="p-4 h-full w-full"
-                               value="{{ old('email') }}">
+            <x-form.text-input name="email" placeholder="Contact Email" class="p-4" value="{{ old('email') }}">
                 <x-slot name="icon"><i class="las la-envelope text-2xl text-gray-500"></i></x-slot>
                 @error('email')
                 {{ $message }}
@@ -23,8 +22,8 @@
 
             <div>
                 <div class="relative">
-                    <select name="industry"
-                            class="p-4 w-full outline-none border border-gray-200 rounded-lg focus:ring">
+                                        <select name="industry"
+                                                class="p-4 w-full block outline-none border border-gray-200 rounded-lg focus:ring">
                         <option value="">Select Industry</option>
                         @foreach($industries as $industry)
                             <option value="{{ $industry->id }}">{{ $industry->name }}</option>
@@ -41,8 +40,7 @@
                 </div>
             </div>
 
-            <x-form.text-input name="website" placeholder="Company Website" class="p-4 h-full w-full"
-                               value="{{ old('website') }}">
+            <x-form.text-input name="website" placeholder="Company Website" class="p-4" value="{{ old('website') }}">
                 <x-slot name="icon"><i class="las la-link text-2xl text-gray-500"></i></x-slot>
                 @error('website')
                 {{ $message }}
