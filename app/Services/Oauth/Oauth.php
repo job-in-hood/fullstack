@@ -64,7 +64,7 @@ class Oauth
             'password' => Hash::make(Str::random()),
         ]);
 
-        if (!$user->id || !$user->hasVerifiedEmail) {
+        if (!$user->id || !$user->hasVerifiedEmail()) {
             // Register user first
             $user->save();
             $user->markEmailAsVerified();

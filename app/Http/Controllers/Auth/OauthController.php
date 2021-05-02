@@ -31,7 +31,6 @@ class OauthController extends Controller
             }
         }
         catch (\Exception $ex) {
-            dd($ex);
             session()->flash('error', 'Login attempt failed');
         }
 
