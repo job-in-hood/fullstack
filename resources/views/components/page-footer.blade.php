@@ -1,9 +1,9 @@
 <footer>
     <section class="bg-gray-800 text-gray-300">
         <div class="container px-2">
-            <div class="container pt-20 pb-12 md:flex px-4 lg:px-0 flex-wrap items-start justify-between">
+            <div class="pt-20 pb-12 md:flex lg:px-0 flex-wrap items-start justify-between">
                 <div class="flex flex-col space-y-8 mb-8">
-                    <img src="{{ asset('images/logo-white.png') }}" class="w-48 mx-auto lg:mx-0">
+                    <x-logo class="w-48 mx-auto lg:mx-0"/>
                     <div class="flex text-2xl justify-evenly items-center">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -30,7 +30,7 @@
                     <a href="#">Jobs in Edinburgh</a>
                     <a href="#">Jobs in Glasgow</a>
                 </div>
-                <div class="grid grid-cols-2 gap-4 whitespace-nowrap">
+                <div class="grid xl:grid-cols-2 gap-4 whitespace-nowrap">
                     <div
                        class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
                         <i class="fab fa-app-store text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>

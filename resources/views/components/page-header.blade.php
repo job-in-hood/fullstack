@@ -8,7 +8,7 @@
             </ul>
         </div>
         <div class="hidden md:block">
-            <div class="flex text-white space-x-2 items-center">
+            <div class="flex text-white space-x-1 lg:space-x-2 items-center">
                 <x-navbar.navbar-link to="{{ route('post-a-job') }}" class="hidden xl:flex">
                     <i class="las la-2x la la-plus-circle mr-2"></i>
                     <span>Post a job</span>
@@ -67,7 +67,7 @@
         </div>
         <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
             <a href="{{ route('home') }}">
-                <img class="h-8 w-auto" src="{{ asset('images/logo-white.png') }}">
+                <x-logo class="text-white h-8"/>
             </a>
         </div>
     </nav>
