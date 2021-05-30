@@ -38,7 +38,7 @@
                             <a class="px-4 py-2 hover:bg-gray-100" href="{{ route('dashboard') }}">
                                 <i class="las la-tachometer-alt mr-2"></i> Dashboard
                             </a>
-                            <a class="px-4 py-2 hover:bg-gray-100" href="#">
+                            <a class="px-4 py-2 hover:bg-gray-100" href="{{ route('profile.edit') }}">
                                 <i class="las la-user mr-2"></i> Edit Profile
                             </a>
                             <a class="px-4 py-2 hover:bg-gray-100" href="{{ route('logout') }}">

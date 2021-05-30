@@ -27,6 +27,5 @@
     <section class="text-gray-700 mt-12">
         <h2 class="text-center text-3xl font-bold">Popular Categories</h2>
     </section> <!-- Popular Categories Section End -->
-
 </x-layouts.app>
 

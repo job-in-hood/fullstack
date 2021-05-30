@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Socialite\Facades\Socialite;
@@ -28,6 +29,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', fn() => redirect(route('home')));
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Profile
+    Route::prefix('profile')->group(function () {
+        Route::get('edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    });
 
     // Recruiters
     Route::prefix('recruiter')->group(function () {

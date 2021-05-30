@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SalaryTypeSeeder::class);
         $this->call(CurrencySeeder::class);
         $this->call(OauthProviderSeeder::class);
+        $this->call(CountrySeeder::class);
+
+
     }
 }
