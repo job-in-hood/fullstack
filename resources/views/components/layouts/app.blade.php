@@ -17,7 +17,7 @@
 <body class="flex flex-col min-h-screen">
 <x-page-header/>
 
-<div class="flex-grow">
+<div class="flex-grow flex flex-col">
     {{ $slot }}
 </div>
 

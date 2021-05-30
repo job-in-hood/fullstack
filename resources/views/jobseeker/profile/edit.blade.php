@@ -1,6 +1,6 @@
 <x-layouts.app>
-    <div class="h-full bg-gray-100">
-        <div class="container px-4 py-4 grid grid-cols-1 md:grid-cols-12 md:gap-4">
+    <div class="flex-grow bg-gray-100">
+        <div class="container py-4 grid grid-cols-1 md:grid-cols-12 md:gap-4">
             <div class="px-4 py-4 shadow-md border rounded-md bg-white md:col-span-3 lg:col-span-2">
                 <x-form.section-title>{{ auth()->user()->name }}</x-form.section-title>
                 <hr class="my-2"/>
