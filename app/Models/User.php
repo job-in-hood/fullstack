@@ -20,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'town', 'city', 'phone', 'postcode'
     ];
 
     /**
@@ -53,11 +53,17 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
             ->withTimestamps();
     }
 
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
     /**
      * @param Company $company
      * @return Representation
      */
-    public function forCompany(Company $company) {
+    public function forCompany(Company $company)
+    {
         return $this->representations()->where('company_id', $company->id)->first();
     }
 

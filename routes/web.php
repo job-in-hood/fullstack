@@ -33,6 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Profile
     Route::prefix('profile')->group(function () {
         Route::get('edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('edit', [ProfileController::class, 'update'])->name('profile.update');
     });
 
     // Recruiters

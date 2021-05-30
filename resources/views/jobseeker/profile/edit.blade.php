@@ -37,13 +37,14 @@
             <div class="md:col-span-6 lg:col-span-8 px-4 py-4 shadow-md border rounded-md bg-white ">
                 <form method="post">
                     @csrf
+                    @method('patch')
                     <x-form.section-title>Personal Details</x-form.section-title>
                     <hr class="my-2"/>
                     <div class="grid xl:grid-cols-2 xl:gap-8">
                         <div>
-                            <x-form.text-input id="name" name="name" placeholder="" label="Name"
+                            <x-form.text-input id="name" name="name" placeholder="" label="Name" required
                                                class="px-4 py-3 h-full w-full"
-                                               value="{{ old('name', auth()->user()->name) }}">
+                                               :value="old('name', auth()->user()->name)">
                                 @error('name')
                                 {{ $message }}
                                 @enderror
@@ -51,7 +52,7 @@
 
                             <x-form.text-input id="phone" name="phone" placeholder="" label="Phone"
                                                class="px-4 py-3 h-full w-full"
-                                               value="{{ old('phone') }}">
+                                               :value="old('phone', auth()->user()->phone)">
                                 @error('phone')
                                 {{ $message }}
                                 @enderror
@@ -59,7 +60,7 @@
 
                             <x-form.text-input id="email" name="email" disabled="disabled" placeholder="" label="Email"
                                                class="px-4 py-3 h-full w-full"
-                                               value="{{ old('email', auth()->user()->email) }}">
+                                               :value="old('email', auth()->user()->email)">
                                 @error('phone')
                                 {{ $message }}
                                 @enderror
@@ -67,29 +68,37 @@
                         </div>
 
                         <div>
-                            <x-form.text-input id="town" name="town" placeholder="" label="Town / County"
+                            <x-form.text-input id="postcode" name="postcode" placeholder="" label="Postcode"
                                                class="px-4 py-3 h-full w-full"
-                                               value="{{ old('town') }}">
+                                               :value="old('postcode', auth()->user()->postcode)">
+                                @error('postcode')
+                                {{ $message }}
+                                @enderror
+                            </x-form.text-input>
+
+                            <x-form.text-input id="town" name="town" placeholder="" label="Town"
+                                               class="px-4 py-3 h-full w-full"
+                                               :value="old('town', auth()->user()->town)">
                                 @error('town')
                                 {{ $message }}
                                 @enderror
                             </x-form.text-input>
 
-                            <x-form.text-input id="city" name="city" placeholder="" label="City"
+                            <x-form.text-input id="city" name="city" placeholder="" label="City / County"
                                                class="px-4 py-3 h-full w-full"
-                                               value="{{ old('city') }}">
+                                               :value="old('city', auth()->user()->city)">
                                 @error('city')
                                 {{ $message }}
                                 @enderror
                             </x-form.text-input>
 
-                            <x-form.text-input id="country" name="country" placeholder="" label="Country"
-                                               class="px-4 py-3 h-full w-full"
-                                               value="{{ old('country') }}">
-                                @error('country')
+                            <x-form.select-input id="country" name="country_id" label="Country" :items="$countries"
+                                                 class="px-4 py-3 h-full w-full"
+                                                 :value="old('country_id', auth()->user()->country_id )">
+                                @error('country_id')
                                 {{ $message }}
                                 @enderror
-                            </x-form.text-input>
+                            </x-form.select-input>
                         </div>
                     </div>
 
