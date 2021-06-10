@@ -5,10 +5,30 @@
                 <div class="flex flex-col space-y-8 mb-8">
                     <x-logo class="w-48 mx-auto lg:mx-0"/>
                     <div class="flex text-2xl justify-evenly items-center">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        @if(config('jobinhood.social.linkedin'))
+                            <a href="{{ config('jobinhood.social.linkedin') }}" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                        @endif
+
+                        @if(config('jobinhood.social.twitter'))
+                            <a href="{{ config('jobinhood.social.twitter') }}" target="_blank"><i
+                                    class="fab fa-twitter"></i></a>
+                        @endif
+
+                        @if(config('jobinhood.social.facebook'))
+                            <a href="{{ config('jobinhood.social.facebook') }}" target="_blank"><i
+                                    class="fab fa-facebook"></i></a>
+                        @endif
+
+                        @if(config('jobinhood.social.instagram'))
+                            <a href="{{ config('jobinhood.social.instagram') }}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        @endif
+
+                        @if(config('jobinhood.social.youtube'))
+                            <a href="{{ config('jobinhood.social.youtube') }}" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                        @endif
                     </div>
                 </div>
 
@@ -32,7 +52,7 @@
                 </div>
                 <div class="grid xl:grid-cols-2 gap-4 whitespace-nowrap">
                     <div
-                       class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
+                        class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
                         <i class="fab fa-app-store text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>
                         <div>
                             <p class="text-lg">Apple Store</p>
@@ -40,7 +60,7 @@
                         </div>
                     </div>
                     <div
-                       class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
+                        class="flex items-center border border-jh-green-400 space-x-4 text-sm leading-tight p-2 px-6 group hover:bg-jh-green-400 hover:text-white">
                         <i class="fab fa-google-play text-4xl text-jh-green-400 w-12 group-hover:text-white"></i>
                         <div>
                             <p class="text-lg">Play Store</p>
