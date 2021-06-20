@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCvRequest;
 use Illuminate\Http\Request;
 
 class CvController extends Controller
@@ -36,9 +37,27 @@ class CvController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCvRequest $request)
     {
-        //
+        $file = $request->file('cv');
+
+        try {
+            // Store file to storage
+            $storagePath = $file->store('cv');
+
+            $cv = auth()->user()->cvs()->create([
+                'original_name' => $file->getClientOriginalName(),
+                'extension' => $file->extension(),
+                'storage_path' => $storagePath
+            ]);
+
+            session()->flash('success', 'CV stored successfully');
+            return redirect(route('cv.index'));
+
+        } catch (\Exception $ex) {
+            // An error has been occured
+            return $ex->getMessage();
+        }
     }
 
     /**
