@@ -13,7 +13,7 @@
 
     <div class="grid grid-cols-2 mt-2 divide divide-x text-center text-sm ">
         <div>
-            <div class="text-2xl">0</div>
+            <div class="text-2xl">{{ auth()->user()->cvs()->count() }}</div>
             {{ Str::pluralStudly('CV', 0) }}
         </div>
         <div>
