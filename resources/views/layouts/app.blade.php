@@ -18,9 +18,12 @@
 <x-page-header/>
 
 <div class="flex-grow flex flex-col">
-    {{ $slot }}
+    @yield('content')
 </div>
 
 <x-page-footer/>
+
+@stack('scripts')
+
 </body>
 </html>

@@ -1,4 +1,5 @@
-<x-layouts.app>
+@extends('layouts.app')
+@section('content')
     <div class="flex flex-col">
         <x-layouts.page-breadcrumb-section title="Reset Password">
             We will send a reset link to your email
@@ -23,4 +24,4 @@
             </form>
         </section>
     </div>
-</x-layouts.app>
+@endsection

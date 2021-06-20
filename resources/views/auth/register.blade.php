@@ -1,4 +1,5 @@
-<x-layouts.app class="flex flex-col">
+@extends('layouts.app')
+@section('content')
     <x-layouts.page-breadcrumb-section title="Register">
         Register and apply for jobs
     </x-layouts.page-breadcrumb-section>
@@ -79,4 +80,4 @@
             </div>
         </div>
     </section>
-</x-layouts.app>
+@endsection

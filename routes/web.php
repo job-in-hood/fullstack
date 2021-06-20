@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CvController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
@@ -34,6 +35,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('profile')->group(function () {
         Route::get('edit', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('edit', [ProfileController::class, 'update'])->name('profile.update');
+
+        Route::resource('cv', CvController::class);
     });
 
     // Recruiters

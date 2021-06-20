@@ -1,6 +1,14 @@
-<x-layouts.dashboard>
+@extends('layouts.dashboard')
+
+@section('mainPanel')
     Dashboard Content
-    <x-slot name="leftPanel">
-        <x-parts.profile-avatar-box />
-    </x-slot>
-</x-layouts.dashboard>
+@endsection
+
+@section('leftPanel')
+    <x-parts.profile-avatar-box/>
+@endsection
+
+@section('rightPanel')
+    <x-parts.profile-cv-summary/>
+@endsection
+

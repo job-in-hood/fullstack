@@ -1,4 +1,6 @@
-<x-layouts.dashboard>
+@extends('layouts.dashboard')
+
+@section('mainPanel')
     <form method="post">
         @csrf
         @method('patch')
@@ -234,8 +236,13 @@
         {{--                    </div>--}}
 
     </form>
+@endsection
 
-    <x-slot name="leftPanel">
-        <x-parts.profile-avatar-box :edit-link=false />
-    </x-slot>
-</x-layouts.dashboard>
+@section('leftPanel')
+    <x-parts.profile-avatar-box :edit-link="false"/>
+@endsection
+
+@section('rightPanel')
+    <x-parts.profile-cv-summary/>
+@endsection
+

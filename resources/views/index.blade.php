@@ -1,4 +1,5 @@
-<x-layouts.app>
+@extends('layouts.app')
+@section('content')
     <!-- Search Section -->
     <section class="bg-search-section bg-cover bg-center">
         <div class="flex bg-black bg-opacity-60 py-36">
@@ -27,5 +28,4 @@
     <section class="text-gray-700 mt-12">
         <h2 class="text-center text-3xl font-bold">Popular Categories</h2>
     </section> <!-- Popular Categories Section End -->
-</x-layouts.app>
-
+@endsection
