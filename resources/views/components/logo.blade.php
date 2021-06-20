@@ -1,7 +1,5 @@
 <svg
     {{ $attributes }}
-    width="353.77005pt"
-    height="53.398438pt"
     viewBox="0 0 353.77005 53.398436">
     <defs
         id="defs25">
