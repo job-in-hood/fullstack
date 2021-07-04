@@ -8,7 +8,7 @@
         <form method="post" class="mb-2" action="{{ route('cv.destroy', ['cv' => $cv->id]) }}">
             @csrf
             @method('delete')
-            <i class="fa fa-file"></i> {{ $cv->original_name }}
+            <a href="{{ route('cv.show', ['cv' => $cv->id]) }}"><i class="fa fa-file"></i> {{ $cv->original_name }}</a>
             <button class="bg-red-500 text-white px-2 py-1" type="submit"><i class="fa fa-trash"></i></button>
         </form>
     @empty
