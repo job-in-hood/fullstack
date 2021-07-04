@@ -9,7 +9,7 @@
         you can choose the right CV for the right application.
     </div>
 
-    <div class="text-center font-bold mt-4">Stored in Jobinhood</div>
+    <div class="text-center font-bold mt-4">Stored on Jobinhood</div>
 
     <div class="grid grid-cols-2 mt-2 divide divide-x text-center text-sm ">
         <div>

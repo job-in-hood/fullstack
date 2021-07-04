@@ -70,11 +70,13 @@ class CvController extends Controller
      */
     public function show(Cv $cv)
     {
-        $filePath = Storage::path($cv->storage_path);
-        $fileName = $cv->original_name;
+        if (auth()->user()->is($cv->user)) {
+            $filePath = Storage::path($cv->storage_path);
+            $fileName = $cv->original_name;
 
-        if (Storage::disk()->exists($filePath)) {
-            return Storage::disk()->download($filePath, $fileName);
+            if (Storage::disk()->exists($filePath)) {
+                return Storage::disk()->download($filePath, $fileName);
+            }
         }
     }
 
