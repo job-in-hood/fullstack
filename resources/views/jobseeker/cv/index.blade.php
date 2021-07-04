@@ -5,9 +5,12 @@
     <hr class="my-2">
 
     @forelse($cvs as $cv)
-        <div>
+        <form method="post" class="mb-2" action="{{ route('cv.destroy', ['cv' => $cv->id]) }}">
+            @csrf
+            @method('delete')
             <i class="fa fa-file"></i> {{ $cv->original_name }}
-        </div>
+            <button class="bg-red-500 text-white px-2 py-1" type="submit"><i class="fa fa-trash"></i></button>
+        </form>
     @empty
         You don't have any stored CV
     @endforelse

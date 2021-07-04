@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCvRequest;
+use App\Models\Cv;
 use Illuminate\Http\Request;
+use Storage;
 
 class CvController extends Controller
 {
@@ -100,8 +102,25 @@ class CvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cv $cv)
     {
-        //
+        if (auth()->user()->is($cv->user)) {
+            try {
+                // Delete file from the storage
+                $result = Storage::delete($cv->storage_path);
+
+                // Delete the record
+                ($result) ? $cv->delete() : abort(500);
+
+                session()->flash('success', 'CV deleted successfully');
+
+                return redirect(route('cv.index'));
+            } catch (\Exception $ex) {
+                return response($ex->getMessage(), 500);
+            }
+
+        } else {
+            abort(403);
+        }
     }
 }
