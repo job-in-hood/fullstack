@@ -1,4 +1,5 @@
-<x-layouts.app>
+@extends('layouts.app')
+@section('content')
     <x-layouts.page-breadcrumb-section title="Create Company"></x-layouts.page-breadcrumb-section>
 
     <section class="container max-w-6xl flex-grow px-8 lg:px-0">
@@ -22,8 +23,8 @@
 
             <div>
                 <div class="relative">
-                                        <select name="industry"
-                                                class="p-4 w-full block outline-none border border-gray-200 rounded-lg focus:ring">
+                    <select name="industry"
+                            class="p-4 w-full block outline-none border border-gray-200 rounded-lg focus:ring">
                         <option value="">Select Industry</option>
                         @foreach($industries as $industry)
                             <option value="{{ $industry->id }}">{{ $industry->name }}</option>
@@ -50,4 +51,4 @@
             <x-form.standard-button class="col-span-full">Create</x-form.standard-button>
         </form>
     </section>
-</x-layouts.app>
+@endsection
