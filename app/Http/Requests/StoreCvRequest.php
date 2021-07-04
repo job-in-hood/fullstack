@@ -24,7 +24,7 @@ class StoreCvRequest extends FormRequest
     public function rules()
     {
         return [
-            'cv' => 'required|file|max:2048|mimes: pdf,doc,docx'
+            'cv' => 'required|file|max:2048|mimes:pdf,doc,docx'
         ];
     }
 }
